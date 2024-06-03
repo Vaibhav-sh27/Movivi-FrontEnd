@@ -1,0 +1,35 @@
+.playcard{
+    border-radius: 25px;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    height: 200px;
+    cursor: pointer;
+    outline-style:ridge;
+    outline-color: aliceblue;
+    outline-width: 2px;
+    transition: 0.4s ease-out;
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+}
+.playcard:hover{
+    transform: translateY(20px);
+}
+.playcard img{
+    border-radius: 25px;
+    position: relative;
+    width: 300px;
+    height: 200px;
+}
+
+.playcard .info{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: aliceblue;
+    z-index: 1;
+    width: 300px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    padding: 10px;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}

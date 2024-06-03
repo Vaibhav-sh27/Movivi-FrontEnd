@@ -1,0 +1,39 @@
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding: 5px 35px;
+}
+.avtar{
+    border-radius: 25px;
+    height: 50px;
+    width: 50px;
+    background-color: aliceblue;
+}
+.avtar img{
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+}
+.search{
+    background-color: #212121;
+    border-radius: 30px;
+    padding: 10px 20px;
+    width: 60vw;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+}
+.search input{
+    background-color:#212121;
+    border:0;
+    color: #666666;
+    font-size: 22px;
+    width: 55vw;
+    padding: 0px 10px;
+    font-weight: 600;
+}
+
+.search input[type=text]:focus{
+    outline: none;
+}

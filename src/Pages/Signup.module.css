@@ -1,0 +1,114 @@
+.signup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page{
+    height: 100vh;
+    width: 50vw;
+    padding: 2rem 1rem;
+}
+
+.logo img{
+    height: 4rem;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: black;
+    border-radius: 30px;
+}
+.logo {
+    cursor: pointer;
+
+}
+
+.img{
+    position: relative;
+}
+
+.img{
+    height: 100vh;
+    width: 60vw;
+    
+}
+
+.desc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 8rem 1rem;
+}
+
+.desc h1{
+    color: white;
+}
+.form{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 20vw;
+}
+.form input{
+    background-color: #191919 !important;
+    border: 0;
+    border-bottom: 1px solid #353434;
+    width: 18rem;
+    color: #848282;
+    height: 3rem;
+    font-size: 20px;
+    border-radius: 5px;
+}
+.form input:focus{
+    outline: none;
+}
+.btn{
+    background-color: white;
+    width: 18rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 5px;
+    color: black;
+    cursor: pointer;
+    margin-top: 22px;
+}
+.btn h5{
+    font-weight: 600;
+    margin-bottom: 0;
+}
+.btn:hover{
+    background-color:  #3dd2cddf;
+    color: white;
+}
+
+.overimg{
+    position: absolute;
+    top: 0;
+    height: 100vh;
+
+}
+.text{
+    position: absolute;
+    top:0px;
+    width: 60vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+.insidetext{
+    position: absolute;
+    bottom: 150px;
+    display: flex;
+    align-items:start;
+    justify-content:center;
+    flex-direction: column;
+}
+.insidetext h4{
+    margin-top: 15px;
+}

@@ -1,0 +1,57 @@
+.playlist{
+    padding: 5px 35px;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 50px;
+}
+.playlist h1{
+    font-weight: 600;
+}
+
+.option{
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+    padding: 10px 20px;
+    color: #666666;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.option h5{
+    margin-bottom: 0;
+    padding-left: 10px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.option:hover{
+    background-color: #3dd2cd58;
+    color: #3DD2CC !important;
+    width: 100%;
+}
+
+.avtar{
+    border-radius: 25px;
+    height: 50px;
+    width: 50px;
+    background-color: aliceblue;
+}
+.avtar img{
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+}
+
+.playcont{
+    padding: 45px 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 45px;
+    column-gap: 10px;
+    justify-items: center;
+
+}
