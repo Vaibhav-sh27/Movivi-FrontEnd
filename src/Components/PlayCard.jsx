@@ -18,7 +18,7 @@ const PlayCard = ({data}) => {
         <img src={imgg} alt="" />
         <div className={styles.info}>
           <div style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
-          <h5>{data.name}</h5>
+          <h5><i className="fas fa-circle-play"></i> &nbsp; {data.name}</h5>
             <h6>{data.access}</h6>
           </div>
             <p>Created By : {data.owner}</p>

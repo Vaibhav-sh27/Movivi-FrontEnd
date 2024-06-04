@@ -29,8 +29,13 @@ const UpdateModal = () => {
       `${import.meta.env.VITE_BAPI_URL}/playlist/edit/${edit._id}`,
       {name: name.current.value,access: access.current.value,}
     );
-    console.log(res.data);
-    setPlay((item) => [...item, res.data]);
+    console.log(res.data.data);
+    setPlay((item) => item.map((p)=>{
+      if(p._id===edit._id){
+        return res.data.data;
+      }
+      return p;
+    }));
     // setPlay((item)=>[...item, playObj]);
   }
   return (
