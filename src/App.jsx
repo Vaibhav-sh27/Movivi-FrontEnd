@@ -20,6 +20,7 @@ import { useAuth } from './contexts/AuthContext';
 import Logout from './Pages/Logout';
 import axios from 'axios';
 import PublicPlay from './Pages/PublicPlay';
+import SeeDetails from './Components/SeeDetails';
 
 const App = () => {
   const { setPlay } = useContext(Context);
@@ -59,6 +60,7 @@ const App = () => {
         {/* UnProtected Routes */}
         
         <Route path="/" element={<Layout><Search /></Layout>} />
+        <Route path="/content/:id" element={<Layout><SeeDetails /></Layout>} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
 

@@ -24,18 +24,19 @@ const UpdateModal = () => {
   const handleClose = () => setShowEdit(false);
 
   async function handleUpdate() {
-
-    let res = await axios.patch(
-      `${import.meta.env.VITE_BAPI_URL}/playlist/edit/${edit._id}`,
-      {name: name.current.value,access: access.current.value,}
-    );
-    console.log(res.data.data);
-    setPlay((item) => item.map((p)=>{
-      if(p._id===edit._id){
-        return res.data.data;
-      }
-      return p;
-    }));
+    if(name.current.value.trim()){
+      let res = await axios.patch(
+        `${import.meta.env.VITE_BAPI_URL}/playlist/edit/${edit._id}`,
+        {name: name.current.value,access: access.current.value,}
+      );
+      console.log(res.data.data);
+      setPlay((item) => item.map((p)=>{
+        if(p._id===edit._id){
+          return res.data.data;
+        }
+        return p;
+      }));
+    }
     // setPlay((item)=>[...item, playObj]);
   }
   return (

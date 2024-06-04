@@ -3,6 +3,7 @@ import styles from "./Card.module.css";
 import { Context } from "../contexts/Context";
 import axios from "axios";
 import AddModal from "./AddModal";
+import { Link } from "react-router-dom";
 
 const InsidePlayCard = ({ data, isOwner, playId }) => {
   let [movie, setMovie] = useState([]);
@@ -54,7 +55,7 @@ const InsidePlayCard = ({ data, isOwner, playId }) => {
             <p>{movie.Plot}</p>
           ))}
         <div>
-          <button style={{ marginLeft: "5px" }}>See Details</button>
+        <Link to={`/content/${data.imdbID}`}><button style={{ marginLeft: "5px" }}>See Details</button></Link>
           {isOwner ? (
             <button
               style={{

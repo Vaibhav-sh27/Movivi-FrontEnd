@@ -3,6 +3,7 @@ import styles from "./Card.module.css";
 import { Context } from '../contexts/Context';
 import axios from 'axios';
 import AddModal from './AddModal';
+import { Link } from 'react-router-dom';
 const Card = ({data}) => {
     let [movie, setMovie]=useState([]);
     let {setPlayItem, setShow}=useContext(Context);
@@ -31,7 +32,7 @@ const Card = ({data}) => {
       <h2>{data.Title}</h2>
       {movie.Plot && (movie.Plot.length > 100 ? <p>{movie.Plot.slice(0,100)}...</p> : <p>{movie.Plot}</p>)}
       <div >
-      <button style={{marginLeft:'5px'}}>See Details</button>
+      <Link to={`/content/${data.imdbID}`}><button style={{marginLeft:'5px'}}>See Details</button></Link>
       <button style={{marginLeft:'30px'}} onClick={async ()=>{
         // console.log(data);
         await setPlayItem(data);

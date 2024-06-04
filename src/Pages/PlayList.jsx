@@ -57,6 +57,9 @@ const PlayList = () => {
       <AlertModal />
       <UpdateModal/>
       <div className={styles.nav}>
+        <div onClick={() => navigate(-1)} className={styles.back}>
+          <i class="fas fa-circle-left"></i>
+        </div>
         <h1>
           <i className="fas fa-circle-play"></i> {currPlay.name}
         </h1>

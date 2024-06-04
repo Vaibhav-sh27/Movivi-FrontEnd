@@ -24,16 +24,18 @@ const CreateModal = () => {
     const handleClose = () => setShow(false);
 
     async function handleCreate() {
+      if(name.current.value.trim()){
         let playObj= {
-            name: name.current.value,
-            access: access.current.value,
-            owner: currUser.email,
-            movies:[],
-        }
-        let res = await axios.post(`${import.meta.env.VITE_BAPI_URL}/playlist/${currUser._id}/add`, playObj)
-        console.log(res.data);
-        setPlay((item)=>[...item, res.data.data.playlistData]);
-        setUser(res.data.data.currUser);
+          name: name.current.value,
+          access: access.current.value,
+          owner: currUser.email,
+          movies:[],
+      }
+      let res = await axios.post(`${import.meta.env.VITE_BAPI_URL}/playlist/${currUser._id}/add`, playObj)
+      console.log(res.data);
+      setPlay((item)=>[...item, res.data.data.playlistData]);
+      setUser(res.data.data.currUser);
+      }
         // setPlay((item)=>[...item, playObj]);
     }
   return (

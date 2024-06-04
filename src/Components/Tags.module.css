@@ -1,0 +1,14 @@
+.tag{
+    padding: 0px 10px;
+    border-radius: 15px;
+    border: 2px solid #e8e8e83a;
+    color: #e8e8e8ad;
+    width:fit-content;
+    font-size: 17px;
+    display: inline-block;
+    margin: 5px;
+}
+
+p{
+    margin-bottom: 0;
+}
