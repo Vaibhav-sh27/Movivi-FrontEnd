@@ -8,6 +8,7 @@ const PlayCard = ({data}) => {
 
   let rand = Math.floor(Math.random()*100);
   let [imgg, setImgg]=useState(playback);
+  
   useEffect( ()=>{
     setImgg(`https://source.unsplash.com/random/300x200?sig=${rand}`);
 

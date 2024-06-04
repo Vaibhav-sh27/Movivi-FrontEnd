@@ -4,6 +4,7 @@ import avatar from "../assets/avatar.jpeg"
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import playback from "../assets/playback.jpg"
+import season from "../assets/video.png"
 import Tags from "./Tags";
 import ReactPlayer from 'react-player'; 
 import movieTrailer from 'movie-trailer'; 
@@ -54,23 +55,22 @@ const SeeDetails = () => {
     <div className={styles.content}>
     <AddModal/>
       <div className={styles.nav}>
+        <div style={{display: 'flex', justifyContent:'space-between', alignItems:'center'}}>
         <div onClick={() => navigate(-1)} className={styles.back}>
           <i class="fas fa-circle-left"></i>
         </div>
-        <h1 style={{margin:'0px 10px'}}>
+        <h1 style={{margin:'0px 25px'}}>
           <i class="fas fa-film"></i> &nbsp; {movie.Title}
         </h1>
-        <h1 style={{margin:'0px 10px'}}>
-          Type : {movie.Type?.charAt(0)?.toUpperCase() + movie.Type?.slice(1)}
-        </h1>
-        <div className={styles.info}>
-        <button style={{marginLeft:'30px'}} onClick={async ()=>{
-        // console.log(data);
-          await setPlayItem(data);
-          setShow(true);
-        }}>+Add to PlayList</button>
         </div>
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems:'center' }}>
+          <div className={styles.info}>
+              <button style={{marginLeft:'30px', marginRight:'20px'}} onClick={async ()=>{
+              // console.log(data);
+                await setPlayItem(data);
+                setShow(true);
+              }}>+Add to PlayList</button>
+          </div>
           <div className={styles.avtar} style={{ marginLeft: "15px" }}>
             <img src={avatar} alt="" />
           </div>
@@ -79,7 +79,6 @@ const SeeDetails = () => {
 
       <div className={styles.detailscont}>
         <div className={styles.trailer}>
-          {/* <img className={styles.trailer} src={playback} alt="" /> */}
            <Player name={movie.Title+""} year={movie.Year} type={movie.Type} />
         </div>
         <div className={styles.details}>
@@ -93,6 +92,9 @@ const SeeDetails = () => {
                 {movie.Genre?.split(",").map((tag) => {
                   return <Tags tagName={tag.trim()} />;
                 })}
+              </div>
+              <div style={{ marginTop: "1rem" , marginLeft:'5px'}}>
+                <h4><img style={{height:'40px'}} src={season} alt="" />&nbsp;{movie.Type==="series"? <i>{movie.totalSeasons} Seasons</i> : <i>Movie</i>}</h4>
               </div>
             </div>
             <div className={styles.plot}>

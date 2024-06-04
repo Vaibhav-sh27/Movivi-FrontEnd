@@ -10,11 +10,13 @@
 .nav h1{
   font-weight: 700;
   font-size: 48px;
+  margin-bottom: 0;
 }
 
 .nav h2{
   font-weight: 700;
   font-size: 35px;
+  margin-bottom: 0;
 }
 
 .playlist h1{

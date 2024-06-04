@@ -57,12 +57,14 @@ const PlayList = () => {
       <AlertModal />
       <UpdateModal/>
       <div className={styles.nav}>
-        <div onClick={() => navigate(-1)} className={styles.back}>
-          <i class="fas fa-circle-left"></i>
+        <div style={{display:'flex', justifyContent:'space-between', alignItems:'center'}}>
+          <div onClick={() => navigate(-1)} className={styles.back}>
+            <i class="fas fa-circle-left"></i>
+          </div>
+          <h1 style={{margin:'0px 20px'}}>
+            <i className="fas fa-circle-play"></i> {currPlay.name}
+          </h1>
         </div>
-        <h1>
-          <i className="fas fa-circle-play"></i> {currPlay.name}
-        </h1>
         <h2>
           {currPlay.access} PlayList
         </h2>
