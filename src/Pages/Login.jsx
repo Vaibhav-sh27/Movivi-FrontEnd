@@ -1,21 +1,29 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import styles from "./Login.module.css";
 import login from "../assets/login.jpg";
 import logo from "../assets/logo.svg";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Context } from "../contexts/Context";
 import AlertModal from '../Components/AlertModal';
 import { useAuth } from "../contexts/AuthContext";
 import axios from "axios";
+import queryString from 'query-string'
 
 const Login = () => {
 
   let navigate = useNavigate();
   let emailInputRef= useRef();
   let passInputRef = useRef();
+  let location = useLocation();
 
   const {setShow, setAlert, setPlay} = useContext(Context);
-  const {setToken, setUser, currUser} = useAuth();
+  const {setToken, setUser, currUser, token} = useAuth();
+
+  useEffect(()=>{
+    if(token){
+      navigate('/');
+    }
+  },[])
 
   async function handleLogin(e) {
     e.preventDefault();
@@ -45,8 +53,11 @@ const Login = () => {
       .catch((error) => {
         console.log(error)
       })
+
+      const{redirectTo} = queryString.parse(location.search);
+      redirectTo? navigate(redirectTo, {replace:'true'}) : navigate('/', {replace:'true'});
    
-      navigate("/");
+    //   navigate("/");
       
     } catch (e) {
       console.log(e);

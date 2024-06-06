@@ -5,6 +5,7 @@ import {
   Route,
   Routes,
   redirect,
+  useLocation,
 } from "react-router-dom";
 import Sidebar from './Components/Sidebar'
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
@@ -28,7 +29,8 @@ const App = () => {
 
   let ProtectedRoute = ({ children }) => {
     if (!token) {
-      return <Navigate to="/login" />;
+      let prevLocation = useLocation();
+      return <Navigate to={`/login?redirectTo=${prevLocation.pathname}`} />;
     }
     return children;
   };
