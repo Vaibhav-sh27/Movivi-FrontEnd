@@ -55,7 +55,7 @@ const Login = () => {
       })
 
       const{redirectTo} = queryString.parse(location.search);
-      redirectTo? navigate(redirectTo, {replace:'true'}) : navigate('/', {replace:'true'});
+      redirectTo? navigate(redirectTo) : navigate('/');
    
     //   navigate("/");
       
