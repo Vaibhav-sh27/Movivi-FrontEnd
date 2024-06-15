@@ -8,12 +8,16 @@ import { useAuth } from '../contexts/AuthContext';
 const Navbar = () => {
   let {setArr}=useContext(Context);
   let query= useRef();
+  let timerID=null;
   
   function handleSearch(e) {
     e.preventDefault();
     if(query.current.value.length>=3){
+      clearTimeout(timerID);
       console.log(query.current.value);
-        getData(query.current.value);
+        timerID= setTimeout(()=>{
+           getData(query.current.value);
+        }, 500)
 
       } else {
         setArr([]);

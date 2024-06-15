@@ -10,7 +10,7 @@ const PlayCard = ({data}) => {
   let [imgg, setImgg]=useState(playback);
   
   useEffect( ()=>{
-    setImgg(`https://source.unsplash.com/random/300x200?sig=${rand}`);
+    setImgg(`https://picsum.photos/seed/${rand}/300/200.jpg`);
 
   },[])
 
